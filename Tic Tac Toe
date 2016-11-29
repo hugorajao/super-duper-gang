@@ -1,1 +1,42 @@
+import pygame, sys
+from pygame.locals import *
+
+pygame.init()
+DISPLAYSURF = pygame.display.set_mode((600, 600))
+pygame.display.set_caption('Hello World!')
+
+#setting up colors
+BLACK = (0,0,0)
+WHITE = (255, 255, 255)
+GREEN = (0, 255, 0)
+
+
+#drawing on the surface object
+#fills the background with black
+DISPLAYSURF.fill(BLACK)
+
+#draws the cross hatch of the tic tac toe
+pygame.draw.line(DISPLAYSURF, WHITE, (200, 0), (200, 600), 1)
+pygame.draw.line(DISPLAYSURF, WHITE, (400, 0), (400, 600), 1)
+pygame.draw.line(DISPLAYSURF, WHITE, (0, 200), (600, 200), 1)
+pygame.draw.line(DISPLAYSURF, WHITE, (0, 400), (600, 400), 1)
+
+rect1 = pygame.Rect(0,0, 200, 200)
+rect2 = pygame.Rect(200, 0, 200, 200)
+rect3 = pygame.Rect(400, 0, 200, 200)
+rect4 = pygame.Rect(0, 200, 200, 200)
+rect5 = pygame.Rect(200, 200, 200, 200)
+rect6 = pygame.Rect(400, 200, 200, 200)
+rect7 = pygame.Rect(0, 400, 200, 200)
+rect8 = pygame.Rect(200, 400, 200, 200)
+rect9 = pygame.Rect(400, 400, 200, 200)
+
+
+
+while True: # main game loop
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+    pygame.display.update()
 
