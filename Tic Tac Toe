@@ -31,7 +31,7 @@ rect7 = pygame.Rect(0, 400, 200, 200)
 rect8 = pygame.Rect(200, 400, 200, 200)
 rect9 = pygame.Rect(400, 400, 200, 200)
 
-
+board = np.array([[0,0,0],[0,0,0],[0,0,0]])
 
 while True: # main game loop
     for event in pygame.event.get():
