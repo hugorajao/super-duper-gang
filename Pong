@@ -1,0 +1,82 @@
+import pygame, sys
+from pygame.locals import *
+
+
+
+pygame.init()
+DISPLAYSURF = pygame.display.set_mode((600, 600))
+pygame.display.set_caption('Hello World!')
+
+#setting up colors
+BLACK = (0,0,0)
+WHITE = (255, 255, 255)
+GREEN = (0, 255, 0)
+
+
+#drawing on the surface object
+#fills the background with black
+DISPLAYSURF.fill(BLACK)
+
+#draws mid point line
+pygame.draw.line(DISPLAYSURF, WHITE, (0, 300), (600, 300), 1)
+
+rect1 = pygame.Rect(0,275, 20, 325)
+rect2 = pygame.Rect(580, 275, 600, 325)
+
+player_onex = 275
+player_oney = 570
+
+player_twox = 275
+player_twoy = 10
+
+velocity_ballx = 0
+velocity_bally = 0
+ballx = 300
+bally = 300
+#def leftwall_rebound(wall):
+    #if wall = left_wall:
+
+#def rightwall_rebound(wall):
+    #if wall = left_wall:
+
+pygame.key.set_repeat(0,10)
+
+while True: # main game loop
+    DISPLAYSURF.fill(BLACK)
+    bally += 2
+    ballx += 2
+    padle1 = pygame.draw.rect(DISPLAYSURF, GREEN, [player_onex,player_oney,75,20]) #position given by (x,y), how wide, how tall
+    padle2 = pygame.draw.rect(DISPLAYSURF, GREEN, [player_twox,player_twoy,75,20])
+    ball = pygame.draw.circle(DISPLAYSURF, WHITE, [ballx,bally], 10)
+    pygame.time.delay(10)
+    if bally > 600:
+        player1 
+
+    
+    for event in pygame.event.get():
+        print
+        mouseclicked = False
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+
+        #pygame.key.set_repeat(0, 10) and motion for Player 1 Rectangle
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                player_onex -= 10
+            if event.key == pygame.K_RIGHT:
+                player_onex += 10
+
+
+        #pygame.key.set_repeat(0, 10) and motion for Player 1 Rectangle
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_a:
+                player_twox -= 10
+            if event.key == pygame.K_d:
+                player_twox += 10
+
+
+    pygame.display.flip()
+
+pygame.quit()
+quit()
